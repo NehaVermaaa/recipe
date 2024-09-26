@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(kit.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Flipbook Container */
+.flipbook-container {
+    perspective: 1000px;
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Flipbook Page Styling */
+.flipbook-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform-origin: right;
+    transform: rotateY(0deg);
+    transition: transform 0.6s, background-color 0.3s;
+    backface-visibility: hidden;
+}
+
+/* Add Hover Effect on Flipbook Page */
+.flipbook-page:hover {
+    background-color: pink; /* Change background color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a larger shadow */
+    transform: scale(1.02); /* Slightly enlarge the page on hover */
+}
+
+/* Alternate Z-Index for Odd Pages */
+.flipbook-page:nth-child(odd) {
+    z-index: 2;
+}
+
+/* Flipped Page Styling */
+.flipbook-page.flipped {
+    transform: rotateY(-180deg);
+}
+
+/* Cover Page Styling */
+.cover-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: blanchedalmond;
+    color: black;
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Add Hover Effect on Cover Page */
+.cover-page:hover {
+    background-color: #47ffd4;
+    transform: scale(1.05); /* Slightly enlarge the cover page on hover */
+    border-style:dotted;
+    border-color: red;
+}
+
+.cover-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.cover-content img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.cover-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.cover-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Recipe Content Styling */
+.recipe-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.recipe-content img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recipe-content h2 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+/* Flipbook Controls */
+.flipbook-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+.flipbook-controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #ff6347;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.flipbook-controls button:hover {
+    background-color: #e5533d;
+}
